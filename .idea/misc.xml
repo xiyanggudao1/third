@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/activity_main.xml" value="0.16041666666666668" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/activity_weather.xml" value="0.16666666666666666" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/aqi.xml" value="0.3333333333333333" />
         <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/choose_area.xml" value="0.175" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/forecast.xml" value="0.175" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/forecast_item.xml" value="0.22" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/now.xml" value="0.175" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/suggestion.xml" value="0.175" />
+        <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/layout/title.xml" value="0.16666666666666666" />
         <entry key="..\:/soft/studiomemory/Weather/app/src/main/res/xml/litepal.xml" value="0.175" />
       </map>
     </option>

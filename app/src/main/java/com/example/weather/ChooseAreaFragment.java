@@ -1,6 +1,7 @@
 package com.example.weather;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -78,6 +79,13 @@ public class ChooseAreaFragment extends Fragment {
                 }else if(currentLevel==LEVEL_CITY){
                     citySelect=cityList.get(position);
                     queryCounty();
+                }else if(currentLevel==LEVEL_COUNTY){
+                    //点击当前县城，进行活动跳转，并将weatherId传过去
+                    String weatherId=countyList.get(position).getWeatherId();
+                    Intent intent=new Intent(getContext(),WeatherActivity.class);
+                    intent.putExtra("weatherId",weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
