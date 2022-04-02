@@ -57,6 +57,7 @@ public class WeatherActivity extends AppCompatActivity {
         sportText=findViewById(R.id.sport_text);
         SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString=sp.getString("weather",null);//缓存中去拿数据
+        Log.d("eeee", weatherString);
         if (weatherString!=null){
             //缓存中有数据并拿得到，将拿到的数据进行解析
             Weather weather= Utility.handleWeatherResponse(weatherString);
@@ -127,8 +128,8 @@ public class WeatherActivity extends AppCompatActivity {
             TextView minText=view.findViewById(R.id.min_text);
             dateText.setText(forecast.date);
             infoText.setText(forecast.more.info);
-            maxText.setText(forecast.temperature.max);
-            minText.setText(forecast.temperature.min);
+            maxText.setText(forecast.temperature.max+"℃");
+            minText.setText(forecast.temperature.min+"℃");
             forecastLayout.addView(view);
         }
         if(weather.aqi!=null){

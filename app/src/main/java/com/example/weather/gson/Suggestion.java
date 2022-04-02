@@ -7,21 +7,21 @@ public class Suggestion {
     public Comfort comfort;
 
     public class Comfort {
-        @SerializedName("text")
+        @SerializedName("txt")
         public String info;
     }
     @SerializedName("cw")
     public CarWash carWash;
 
     public class CarWash {
-        @SerializedName("text")
+        @SerializedName("txt")
         public String info;
     }
 
     public Sport sport;
 
     public class Sport {
-        @SerializedName("text")
+        @SerializedName("txt")
         public String info;
     }
 }
