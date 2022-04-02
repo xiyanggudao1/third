@@ -2,6 +2,9 @@ package com.example.weather.util;
 
 import android.text.TextUtils;
 
+import com.example.weather.db.City;
+import com.example.weather.db.County;
+import com.example.weather.db.Province;
 import com.example.weather.gson.Weather;
 import com.google.gson.Gson;
 

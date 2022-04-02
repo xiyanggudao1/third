@@ -3,7 +3,6 @@ package com.example.weather;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +17,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.weather.util.City;
-import com.example.weather.util.County;
+import com.example.weather.db.City;
+import com.example.weather.db.County;
 import com.example.weather.util.HttpUtil;
-import com.example.weather.util.Province;
+import com.example.weather.db.Province;
 import com.example.weather.util.Utility;
 
 import org.litepal.LitePal;
-import org.litepal.crud.LitePalSupport;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -80,12 +77,19 @@ public class ChooseAreaFragment extends Fragment {
                     citySelect=cityList.get(position);
                     queryCounty();
                 }else if(currentLevel==LEVEL_COUNTY){
-                    //点击当前县城，进行活动跳转，并将weatherId传过去
                     String weatherId=countyList.get(position).getWeatherId();
-                    Intent intent=new Intent(getContext(),WeatherActivity.class);
-                    intent.putExtra("weatherId",weatherId);
-                    startActivity(intent);
-                    getActivity().finish();
+                    if(getActivity() instanceof MainActivity){
+                        //点击当前县城，进行活动跳转，并将weatherId传过去
+                        Intent intent=new Intent(getContext(),WeatherActivity.class);
+                        intent.putExtra("weatherId",weatherId);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }else if(getActivity() instanceof WeatherActivity){
+                        WeatherActivity activity= (WeatherActivity) getActivity();
+                        activity.drawerLayout.closeDrawers();
+                        activity.swipeRefreshLayout.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                    }
                 }
             }
         });
