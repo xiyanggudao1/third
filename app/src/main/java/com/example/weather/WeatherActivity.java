@@ -101,6 +101,7 @@ public class WeatherActivity extends AppCompatActivity {
         }
         //先从缓存中拿天气信息
         String weatherString = sp.getString("weather", null);//缓存中去拿数据
+        Log.d("eeee",weatherString);
         if (weatherString != null) {
             //缓存中有数据并拿得到，将拿到的数据进行解析
             Weather weather = Utility.handleWeatherResponse(weatherString);
@@ -189,7 +190,7 @@ public class WeatherActivity extends AppCompatActivity {
     //天气信息展示
     private void showWeatherInfo(Weather weather) {
         String cityName = weather.basic.cityName;
-        String updateTime = weather.basic.update.updateTime.split(" ")[1];
+        String updateTime = weather.basic.update.updateTime.substring(5,10);
         String degree = weather.now.temperature + "℃";
         String weatherInfo = weather.now.more.info;
         titleCity.setText(cityName);
