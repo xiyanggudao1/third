@@ -101,7 +101,6 @@ public class WeatherActivity extends AppCompatActivity {
         }
         //先从缓存中拿天气信息
         String weatherString = sp.getString("weather", null);//缓存中去拿数据
-        Log.d("eeee",weatherString);
         if (weatherString != null) {
             //缓存中有数据并拿得到，将拿到的数据进行解析
             Weather weather = Utility.handleWeatherResponse(weatherString);
