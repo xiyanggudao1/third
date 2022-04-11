@@ -55,6 +55,14 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView carWashText;
     private TextView sportText;
 
+    public String getmWeatherId() {
+        return mWeatherId;
+    }
+
+    public void setmWeatherId(String mWeatherId) {
+        this.mWeatherId = mWeatherId;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

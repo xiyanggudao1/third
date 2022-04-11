@@ -88,6 +88,7 @@ public class ChooseAreaFragment extends Fragment {
                         WeatherActivity activity= (WeatherActivity) getActivity();
                         activity.drawerLayout.closeDrawers();
                         activity.swipeRefreshLayout.setRefreshing(true);
+                        activity.setmWeatherId(weatherId);//记录此时的weatherId,这样在刷新的时候就不会有跳到第一次打开界面选择的城市了
                         activity.requestWeather(weatherId);
                     }
                 }
